@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+		text-align:center;
+		background-image: linear-gradient(to right, blue, yellow);
+    }
+    .flip-card{
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+		margin:auto;
+    }
+    .flip-card-inner{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    .flip-card:hover .flip-card-inner{
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility:hidden;
+        backface-visibility: hidden;
+    }
+    .flip-card-front{
+        background-color: #bbb;
+        color:black;
+    }
+    .flip-card-back{
+        background-color: tomato;
+        color: #fff;
+        transform: rotateY(180deg);
+    }
+	a{
+	text-decoration:none;
+	color:;
+	}
+	.blink_me {
+	  animation: blinker 1s linear infinite;
+	}
+
+	@keyframes blinker {
+	  50% {
+		opacity: 0;
+	  }
+	}
+
+    </style>
+
+    <h1>Welcome to Card Flip</h1>
+    <h3>Hover Over Me</h3>
+    
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://afk09.com.tr/assets/img/profile-img.jpg" style="width: 300px;height:300px;" alt="">
+            </div>
+            <div class="flip-card-back">
+                <h1>AFK</h1>
+                <p>Software Engineer</p>
+                <a href="afk09.com.tr" target="_blank" class="blink_me">CV</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
